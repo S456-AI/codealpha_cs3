@@ -1,0 +1,38 @@
+1. Code Review – Identifying Security Vulnerabilities
+
+.A manual review of the Python login application revealed multiple security weaknesses. 
+.The application stores user credentials directly in the source code and compares them with user input without applying security controls.
+.This approach exposes sensitive information and increases the risk of unauthorized access.
+
+2. Identified Security Vulnerabilities
+
+.Passwords are stored in plain text, making them readable to anyone with access to the source code.
+.User credentials are hardcoded within the application.
+.No password hashing or encryption is used.
+.Input validation is missing, allowing empty or invalid data.
+.The authentication mechanism lacks protection against brute-force attempts.
+
+3. Recommendations and Best Practices for Secure Coding
+
+.Store passwords using secure hashing algorithms instead of plain text.
+.Avoid hardcoding sensitive information in source code.
+.Validate and sanitize all user inputs.
+.Use secure authentication mechanisms and proper error handling.
+.Follow established security standards such as OWASP Secure Coding Practices. 
+
+4. Findings Documentation
+
+| Security Issue             | Impact                           |
+| -------------------------- | -------------------------------- |
+| Plaintext password storage | Exposure of sensitive data       |
+| Hardcoded credentials      | Easy credential extraction       |
+| No hashing mechanism       | High risk of password compromise |
+| Missing input validation   | Input manipulation               |
+| Weak authentication        | Unauthorized access              |
+
+5. Remediation Steps for Safer Code
+
+.Implement password hashing before storing or comparing credentials.
+.Remove hardcoded credentials and store them securely.
+.Add input validation to prevent invalid or empty inputs.
+.Improve authentication logic to enhance overall application security.
